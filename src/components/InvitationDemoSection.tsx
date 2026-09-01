@@ -247,14 +247,16 @@ export const InvitationDemoSection: React.FC = () => {
               >
                 {/* FRONT OF THE CARD */}
                 <div
-                  className={`absolute inset-0 w-full h-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-gradient-to-b ${selectedTemplate.cardBg} border-2 border-white/20 shadow-2xl flex flex-col justify-between overflow-hidden backface-hidden`}
+                  className={`absolute inset-0 w-full h-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-gradient-to-b ${selectedTemplate.cardBg} border-2 border-white/20 shadow-2xl flex flex-col justify-between overflow-hidden backface-hidden transition-opacity duration-300 ${
+                    isFlipped ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+                  }`}
                 >
                   {/* Subtle Shimmer Overlays */}
                   <div className="absolute -top-20 -right-20 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
                   {/* Top Bar */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/10 text-white backdrop-blur-md border border-white/15">
+                    <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/10 text-white border border-white/15">
                       {selectedTemplate.badge}
                     </span>
                     <span className="text-xl sm:text-2xl">{selectedTemplate.icon}</span>
@@ -305,7 +307,9 @@ export const InvitationDemoSection: React.FC = () => {
 
                 {/* BACK OF THE CARD (Interactive RSVP Form) */}
                 <div
-                  className={`absolute inset-0 w-full h-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-[#0D0A26] border-2 border-[#2200EE]/50 shadow-2xl flex flex-col justify-between overflow-hidden rotate-y-180 backface-hidden`}
+                  className={`absolute inset-0 w-full h-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-[#0D0A26] border-2 border-[#2200EE]/50 shadow-2xl flex flex-col justify-between overflow-hidden rotate-y-180 backface-hidden transition-opacity duration-300 ${
+                    !isFlipped ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+                  }`}
                   onClick={(e) => e.stopPropagation()} // don't flip when filling form
                 >
                   <div className="flex items-center justify-between pb-3 border-b border-white/10">
