@@ -138,25 +138,25 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
-              {/* Popular Badge */}
-              {service.popular && (
-                <div className="absolute top-3 right-3 sm:top-6 sm:right-6 inline-flex items-center space-x-1 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#2200EE] text-white text-[9px] sm:text-xs font-bold shadow-[0_0_15px_#2200EE]">
-                  <Sparkles className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-yellow-300" />
-                  <span className="hidden xs:inline sm:inline">Trending Choice</span>
-                  <span className="xs:hidden sm:hidden">HOT</span>
-                </div>
-              )}
-
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
-                  {/* Category Pill + Icon */}
-                  <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-6">
-                    <div className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 group-hover:scale-110 transition-transform shrink-0 [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-7 sm:[&>svg]:h-7">
-                      {service.icon}
+                  {/* Category Pill + Icon + Popular Badge */}
+                  <div className="flex items-center justify-between gap-1 mb-3 sm:mb-6">
+                    <div className="flex items-center space-x-1.5 sm:space-x-3 min-w-0">
+                      <div className="p-1.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/[0.05] border border-white/10 group-hover:scale-110 transition-transform shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-7 sm:[&>svg]:h-7">
+                        {service.icon}
+                      </div>
+                      <span className="text-[8px] sm:text-xs uppercase font-bold tracking-wider text-gray-400 truncate">
+                        {service.category}
+                      </span>
                     </div>
-                    <span className="text-[9px] sm:text-xs uppercase font-bold tracking-wider text-gray-400 line-clamp-1">
-                      {service.category}
-                    </span>
+
+                    {service.popular && (
+                      <span className="inline-flex items-center space-x-1 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#2200EE] text-white text-[8px] sm:text-xs font-bold shadow-[0_0_15px_#2200EE] shrink-0">
+                        <Sparkles className="w-2 h-2 sm:w-3.5 sm:h-3.5 text-yellow-300" />
+                        <span>HOT</span>
+                      </span>
+                    )}
                   </div>
 
                   {/* Title & Tagline */}

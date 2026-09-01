@@ -94,10 +94,10 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose, on
               onClose();
               onOpenBooking();
             }}
-            className="w-full py-3.5 rounded-full bg-[#2200EE] hover:bg-[#1C00C8] text-white text-xs font-bold shadow-[0_0_20px_#2200EE] transition-all flex items-center justify-center space-x-2"
+            className="w-full py-3.5 rounded-full bg-[#2200EE] hover:bg-[#1C00C8] text-white text-xs sm:text-sm font-extrabold shadow-[0_0_20px_rgba(34,0,238,0.6)] transition-all flex items-center justify-center space-x-2 whitespace-nowrap"
           >
-            <Zap className="w-4 h-4 text-yellow-300 fill-yellow-300" />
-            <span>{t('Request Proposal for', 'Angebot Anfordern für')} {service.title} ⚡</span>
+            <span>{t('Request Proposal ⚡', 'Angebot Anfordern ⚡')}</span>
+            <Zap className="w-4 h-4 text-yellow-300 fill-yellow-300 group-hover:scale-125 transition-transform" />
           </button>
         </motion.div>
       </div>
