@@ -111,22 +111,22 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-6 sm:mt-10 flex flex-row items-center justify-center gap-2 sm:gap-4 max-w-md sm:max-w-2xl mx-auto w-full px-2 sm:px-0"
+            className="mt-4 sm:mt-10 flex flex-row items-center justify-center gap-1.5 sm:gap-4 max-w-md sm:max-w-2xl mx-auto w-full px-1 sm:px-0"
           >
             <a
               href="#contact"
-              className="flex-1 sm:flex-initial sm:w-72 min-h-[38px] sm:min-h-[56px] px-2.5 sm:px-6 py-2 sm:py-4 text-[11px] xs:text-xs sm:text-base font-extrabold text-white bg-[#2200EE] hover:bg-[#1C00C8] rounded-full shadow-[0_0_20px_rgba(34,0,238,0.5)] hover:shadow-[0_0_50px_rgba(85,51,255,0.9)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-1 sm:space-x-3 group whitespace-nowrap"
+              className="flex-1 sm:flex-initial sm:w-72 min-h-[34px] sm:min-h-[56px] px-2 sm:px-6 py-1.5 sm:py-4 text-[10px] xs:text-[11px] sm:text-base font-extrabold text-white bg-[#2200EE] hover:bg-[#1C00C8] rounded-full shadow-[0_0_20px_rgba(34,0,238,0.5)] hover:shadow-[0_0_50px_rgba(85,51,255,0.9)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-1 sm:space-x-3 group whitespace-nowrap"
             >
               <span>{t('Launch Your Project', 'Projekt Starten')}</span>
-              <Zap className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-300 fill-yellow-300 group-hover:rotate-12 transition-transform shrink-0" />
+              <Zap className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-yellow-300 fill-yellow-300 group-hover:rotate-12 transition-transform shrink-0" />
             </a>
 
             <a
               href="#invitations"
-              className="flex-1 sm:flex-initial sm:w-72 min-h-[38px] sm:min-h-[56px] px-2.5 sm:px-6 py-2 sm:py-4 text-[11px] xs:text-xs sm:text-base font-bold text-gray-200 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 hover:border-[#2200EE] rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-center space-x-1 sm:space-x-2 group whitespace-nowrap"
+              className="flex-1 sm:flex-initial sm:w-72 min-h-[34px] sm:min-h-[56px] px-2 sm:px-6 py-1.5 sm:py-4 text-[10px] xs:text-[11px] sm:text-base font-bold text-gray-200 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 hover:border-[#2200EE] rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-center space-x-1 sm:space-x-2 group whitespace-nowrap"
             >
               <span>{t('Explore Digital Invites', 'Digitale Einladungen')}</span>
-              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:translate-x-1 group-hover:text-[#5533FF] transition-all shrink-0" />
+              <ArrowRight className="w-2.5 h-2.5 sm:w-4 sm:h-4 text-gray-400 group-hover:translate-x-1 group-hover:text-[#5533FF] transition-all shrink-0" />
             </a>
           </motion.div>
 
@@ -135,18 +135,18 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-gray-300 font-medium"
+            className="mt-5 sm:mt-8 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 text-[10px] sm:text-sm text-gray-300 font-medium"
           >
-            <div className="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-[170px] justify-center text-center">
-              <ShieldCheck className="w-4 h-4 text-[#5533FF] shrink-0" />
+            <div className="flex items-center space-x-1.5 px-2.5 py-1 sm:px-4 sm:py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-0 sm:min-w-[170px] justify-center text-center">
+              <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-[#5533FF] shrink-0" />
               <span>{t('Full-Service Agency', 'Full-Service Agentur')}</span>
             </div>
-            <div className="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-[170px] justify-center text-center">
-              <Sparkles className="w-4 h-4 text-yellow-400 shrink-0" />
+            <div className="flex items-center space-x-1.5 px-2.5 py-1 sm:px-4 sm:py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-0 sm:min-w-[170px] justify-center text-center">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 shrink-0" />
               <span>{t('Tailor-Made Digital Cards', 'Maßgeschneiderte Karten')}</span>
             </div>
-            <div className="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-[170px] justify-center text-center">
-              <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="flex items-center space-x-1.5 px-2.5 py-1 sm:px-4 sm:py-2.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md min-w-0 sm:min-w-[170px] justify-center text-center">
+              <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
               <span>{t('Data-Driven Campaigns', 'Datengetriebene Kampagnen')}</span>
             </div>
           </motion.div>
