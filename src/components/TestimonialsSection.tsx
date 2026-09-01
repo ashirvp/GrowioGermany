@@ -159,6 +159,8 @@ export const TestimonialsSection: React.FC = () => {
                     <img
                       src={current.avatar}
                       alt={current.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-[#2200EE] shrink-0"
                     />
                     <div>

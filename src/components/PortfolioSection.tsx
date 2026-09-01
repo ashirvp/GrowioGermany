@@ -30,7 +30,7 @@ export const portfolioData: PortfolioItem[] = [
     categoryLabel: 'Website Design & Dev',
     metric: '+340%',
     metricLabel: 'Qualified Lead Conversions',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70',
     summary: 'A futuristic 3D interactive product site featuring WebGL animations and instant demo booking.',
     fullDetails: {
       challenge: 'Lumina was struggling with a slow legacy website that failed to convey their complex AI capabilities.',
@@ -51,7 +51,7 @@ export const portfolioData: PortfolioItem[] = [
     categoryLabel: 'Digital Event Invitations',
     metric: '98.6%',
     metricLabel: 'Instant Online RSVP Rate',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=70',
     summary: 'Bespoke royal wedding digital invitation web app with live RSVP, orchestral music, and venue GPS map.',
     fullDetails: {
       challenge: 'The couple wanted an eco-friendly luxury alternative to paper invites that could manage 400 VIP guests effortlessly.',
@@ -72,7 +72,7 @@ export const portfolioData: PortfolioItem[] = [
     categoryLabel: 'Digital Marketing & SEO',
     metric: '$4.2M',
     metricLabel: 'Ad Revenue Driven (7.8x ROAS)',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=70',
     summary: 'Omnichannel Meta & TikTok paid acquisition engine paired with influencer growth loops.',
     fullDetails: {
       challenge: 'HyperFit faced stagnating return on ad spend (ROAS) and needed a fresh viral campaign framework.',
@@ -93,7 +93,7 @@ export const portfolioData: PortfolioItem[] = [
     categoryLabel: 'Digital Event Invitations',
     metric: '2,500+',
     metricLabel: 'Executive VIP Attendees',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=70',
     summary: 'High-tech conference digital pass web app with live speaker schedule, QR code entry, and networking chat.',
     fullDetails: {
       challenge: 'Organizers needed a seamless mobile-first VIP invitation and badge portal for international tech executives.',
@@ -206,6 +206,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#070514] via-[#070514]/40 to-transparent" />
