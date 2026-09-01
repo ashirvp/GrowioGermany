@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --color-primary: #2200EE;
+    --color-primary-light: #5533FF;
+    --color-bg-dark: #070514;
+    --color-bg-card: #0D0A26;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-dark);
+    color: #ffffff;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Utilities & Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+}
+
+@keyframes boltFlash {
+  0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 5px #2200EE); }
+  50% { opacity: 1; filter: drop-shadow(0 0 20px #5533FF) drop-shadow(0 0 35px #06B6D4); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-bolt-flash {
+  animation: boltFlash 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(13, 10, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 16, 56, 0.85);
+  border-color: rgba(85, 51, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(34, 0, 238, 0.35);
+}
+
+.glass-capsule {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Glow Text & Borders */
+.glow-text-primary {
+  text-shadow: 0 0 20px rgba(34, 0, 238, 0.7), 0 0 40px rgba(85, 51, 255, 0.4);
+}
+
+.glow-box-blue {
+  box-shadow: 0 0 30px rgba(34, 0, 238, 0.3), inset 0 0 15px rgba(85, 51, 255, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070514;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B1745;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2200EE;
+}
