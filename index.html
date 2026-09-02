@@ -7,12 +7,30 @@
     <title>Growio | Full-Service Marketing & Digital Experience Agency</title>
     <meta name="description" content="Growio is a high-energy, full-service marketing agency powering website design, digital marketing campaigns, and next-gen interactive invitation experiences." />
     
-    <!-- Google Fonts & Domain Preconnect -->
+    <!-- Critical Instant Paint Styles -->
+    <style>
+      html, body {
+        background-color: #070514;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #root {
+        min-height: 100vh;
+        background-color: #070514;
+      }
+    </style>
+
+    <!-- Google Fonts & Domain Preconnect (Non-blocking async load) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preload" as="image" href="/logo.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    </noscript>
   </head>
   <body class="bg-[#070514] text-white selection:bg-[#2200EE] selection:text-white font-sans antialiased overflow-x-hidden">
     <div id="root"></div>
