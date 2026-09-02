@@ -25,7 +25,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     { name: t('Services', 'Dienstleistungen'), href: '#services' },
     { name: t('Digital Invites', 'Digitale Einladungen'), href: '#invitations' },
     { name: t('Portfolio', 'Portfolio'), href: '#portfolio' },
-    { name: t('Our Process', 'Unser Prozess'), href: '#process' },
     { name: t('Testimonials', 'Kundenstimmen'), href: '#testimonials' },
   ];
 
@@ -33,23 +32,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-[#070514]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'py-5 bg-transparent'
+          scrolled ? 'py-2.5 bg-[#070514]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'py-4 bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2">
             {/* Brand Logo */}
-            <a href="#" className="group flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+            <a href="#" className="group flex items-center space-x-2 transition-transform duration-300 hover:scale-105 shrink-0">
               <GrowioLogo size="sm" />
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors group flex items-center space-x-1.5"
+                  className="relative px-2.5 xl:px-3.5 py-1.5 text-xs xl:text-sm font-semibold text-gray-300 hover:text-white transition-colors group flex items-center space-x-1 whitespace-nowrap"
                 >
                   <span>{link.name}</span>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#2200EE] transition-all duration-300 group-hover:w-3/4 shadow-[0_0_8px_#2200EE]" />
@@ -58,11 +57,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </nav>
 
             {/* Actions & Language Switcher */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 shrink-0">
               {/* Language Switcher Pill */}
               <button
                 onClick={toggleLanguage}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-[#2200EE]/30 border border-white/20 hover:border-[#5533FF] text-xs font-extrabold text-white transition-all shadow-md active:scale-95 cursor-pointer"
+                className="flex items-center space-x-1 px-2.5 py-1.5 rounded-full bg-white/10 hover:bg-[#2200EE]/30 border border-white/20 hover:border-[#5533FF] text-xs font-extrabold text-white transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
                 title={language === 'en' ? 'Auf Deutsch wechseln' : 'Switch to English'}
               >
                 <Languages className="w-3.5 h-3.5 text-yellow-300" />
@@ -71,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
               <button
                 onClick={onOpenBooking}
-                className="flex items-center space-x-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gray-300 hover:text-white rounded-full border border-white/15 hover:border-[#2200EE] hover:bg-[#2200EE]/10 transition-all duration-300"
+                className="flex items-center space-x-1.5 px-3 py-2 text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white rounded-full border border-white/15 hover:border-[#2200EE] hover:bg-[#2200EE]/10 transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 <Calendar className="w-3.5 h-3.5 text-[#5533FF]" />
                 <span>{t('Book Call', 'Termin Buchen')}</span>
@@ -79,11 +78,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
               <a
                 href="#contact"
-                className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#2200EE] hover:bg-[#1C00C8] rounded-full shadow-[0_0_20px_rgba(34,0,238,0.5)] hover:shadow-[0_0_30px_rgba(85,51,255,0.8)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group"
+                className="relative inline-flex items-center justify-center px-4 xl:px-5 py-2 text-xs xl:text-sm font-extrabold text-white bg-[#2200EE] hover:bg-[#1C00C8] rounded-full shadow-[0_0_20px_rgba(34,0,238,0.5)] hover:shadow-[0_0_30px_rgba(85,51,255,0.8)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group whitespace-nowrap shrink-0"
               >
-                <span className="relative z-10 flex items-center space-x-2">
+                <span className="relative z-10 flex items-center space-x-1.5">
                   <span>{t('Start Project', 'Projekt Starten')}</span>
-                  <Zap className="w-4 h-4 text-yellow-300 fill-yellow-300 group-hover:scale-125 transition-transform" />
+                  <Zap className="w-3.5 h-3.5 text-yellow-300 fill-yellow-300 group-hover:scale-125 transition-transform" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-[#5533FF] via-[#7C3AED] to-[#2200EE] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
