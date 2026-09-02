@@ -18,10 +18,39 @@ const CaseStudyModal = lazy(() => import('./components/CaseStudyModal').then(m =
 const ServiceModal = lazy(() => import('./components/ServiceModal').then(m => ({ default: m.ServiceModal })));
 
 const SectionFallback: React.FC = () => (
-  <div className="w-full py-16 flex items-center justify-center">
-    <div className="w-8 h-8 rounded-full border-2 border-[#2200EE] border-t-transparent animate-spin" />
+  <div className="w-full py-12 flex items-center justify-center min-h-[200px]">
+    <div className="w-6 h-6 rounded-full border-2 border-[#2200EE] border-t-transparent animate-spin" />
   </div>
 );
+
+const ViewportLazySection: React.FC<{ children: React.ReactNode; minHeight?: string }> = ({ children, minHeight = '250px' }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '300px 0px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} style={{ minHeight: isVisible ? 'auto' : minHeight }}>
+      {isVisible ? <Suspense fallback={<SectionFallback />}>{children}</Suspense> : <SectionFallback />}
+    </div>
+  );
+};
 
 export function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -39,15 +68,30 @@ export function App() {
           {/* Instant Hero Section */}
           <HeroSection onOpenBooking={() => setIsBookingOpen(true)} />
 
-          {/* Lazy Loaded Below-the-fold Sections */}
-          <Suspense fallback={<SectionFallback />}>
+          {/* Viewport Lazy Loaded Below-the-fold Sections for Maximum Mobile Speed */}
+          <ViewportLazySection minHeight="400px">
             <ServicesSection onSelectService={(service) => setSelectedService(service)} />
+          </ViewportLazySection>
+
+          <ViewportLazySection minHeight="500px">
             <InvitationDemoSection />
+          </ViewportLazySection>
+
+          <ViewportLazySection minHeight="500px">
             <PortfolioSection onSelectProject={(project) => setSelectedProject(project)} />
+          </ViewportLazySection>
+
+          <ViewportLazySection minHeight="400px">
             <ProcessSection />
+          </ViewportLazySection>
+
+          <ViewportLazySection minHeight="400px">
             <TestimonialsSection />
+          </ViewportLazySection>
+
+          <ViewportLazySection minHeight="400px">
             <ContactSection onOpenBooking={() => setIsBookingOpen(true)} />
-          </Suspense>
+          </ViewportLazySection>
         </main>
 
         {/* Lazy Loaded Popup Modals */}

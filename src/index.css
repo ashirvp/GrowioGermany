@@ -134,3 +134,22 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #2200EE;
 }
+
+/* Mobile Performance & GPU Optimizations */
+@media (max-width: 640px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .backdrop-blur-md,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .glass-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .glow-text-primary {
+    text-shadow: 0 0 10px rgba(34, 0, 238, 0.5) !important;
+  }
+}
