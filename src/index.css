@@ -2,8 +2,8 @@
 
 @layer base {
   :root {
-    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-sans: 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --color-primary: #2200EE;
     --color-primary-light: #5533FF;
     --color-bg-dark: #070514;
@@ -14,10 +14,13 @@
     font-family: var(--font-sans);
     background-color: var(--color-bg-dark);
     color: #ffffff;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, .font-heading {
     font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 800;
   }
 }
 
